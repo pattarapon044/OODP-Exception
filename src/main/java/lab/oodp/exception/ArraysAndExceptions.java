@@ -73,7 +73,7 @@ public class ArraysAndExceptions {
 			if (index < 0) {
 				throw new IndexTooLowException();
 			}
-			else if (index > 5) {
+			else if (index >= 5) {
 				throw new IndexTooHighException();
 			}
 			
