@@ -19,7 +19,17 @@ private​ ​ void​ tryCatch02() {
 }
 ```
 ```java
-Your code
+public void updateTryCatch02() {
+	int num1 = 120, num2 = 120, result = 0;
+	
+	try {
+		result = num2 / (num1 - num2);
+		System.out.println("Result: " + result);
+	}
+	catch (ArithmeticException e){
+		System.out.println("Error : Devison by 0");
+	}
+}
 ```
 
 2.What is the output of the following code, when tryCatch06() is called?
@@ -47,7 +57,8 @@ private void try06(int num, String s) {
 ```
 
 ```
-Your answer
+C
+B Error
 ```
 
 3. What is the output of the following code, when ​ tryCatch08()​ is called?
@@ -75,7 +86,9 @@ private​ ​ void​ try08(​ int​ ​ num​ , String ​ s ​ ) {
 ```
 
 ```java
-Your answer
+C
+E
+B
 ```
 
 Exercise Two - Arrays and Exception
