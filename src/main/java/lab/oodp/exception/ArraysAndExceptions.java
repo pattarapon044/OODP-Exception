@@ -12,18 +12,20 @@ public class ArraysAndExceptions {
 	 * Runs the program.
 	 */
 	public void start() {
-
+		
+		//initialize of myArray with 5 random element of integer from generateArray()
 		int[] myArray = generateArray();
-
+		
+		//Prepare Value
 		int index = -1;
 		boolean needInput = true;
 
 		while (needInput) {
 			// TODO: add try catch for handling InvalidIndexException, IndexTooLowException, and IndexTooHighException appropriately.
-
 			System.out.print("Enter an index:\n>> ");
 			String indexStr = Keyboard.readInput();
 			
+			//Following command
 			try {
 				index = getArrayIndex(indexStr);
 				needInput = false;
@@ -70,19 +72,26 @@ public class ArraysAndExceptions {
 		try {
 			int index = Integer.parseInt(indexStr);
 			// TODO: check index value and return proper exception
-			if (index < 0) {
-				throw new IndexTooLowException();
-			}
-			else if (index >= 5) {
-				throw new IndexTooHighException();
+			//First, range of array's index is 5, start from 0 to 4.
+			
+			//Condition 1 : Index lower than the given range
+			if (index < 0) { //
+				throw new IndexTooLowException("index too low");
 			}
 			
+			//Condition 2 : Index Higher than last given index (index > 4)
+			if (index >= 5) { 
+				throw new IndexTooHighException("index too high");
+			}
+			
+			//Pass all Exception
 			return index;
 
 		} catch (NumberFormatException e) {
 
 			// TODO: remove below return, throw the proper exception
-			throw new InvalidIndexException();
+			//Condition : Index that is input not be integer.
+			throw new InvalidIndexException("invalid index");
 		}
 
 	}

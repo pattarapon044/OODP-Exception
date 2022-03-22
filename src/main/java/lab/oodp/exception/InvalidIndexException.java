@@ -1,11 +1,8 @@
 package lab.oodp.exception;
 
-public class InvalidIndexException extends Exception {
+public class InvalidIndexException extends ArrayException {
 
-	@Override
-	public String getMessage() {
-		// TODO Auto-generated method stub
-		return "Error: Invalid index!";
-	}
-	
-}
+	public InvalidIndexException(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}}

@@ -1,11 +1,8 @@
 package lab.oodp.exception;
 
-public class IndexTooLowException extends Exception {
+public class IndexTooLowException extends ArrayException {
 
-	@Override
-	public String getMessage() {
-		// TODO Auto-generated method stub
-		return "Error: Index too low!";
-	}
-	
-}
+	public IndexTooLowException(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}}
