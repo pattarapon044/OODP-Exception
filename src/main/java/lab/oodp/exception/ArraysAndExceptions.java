@@ -24,6 +24,7 @@ public class ArraysAndExceptions {
 			System.out.print("Enter an index:\n>> ");
 			String indexStr = Keyboard.readInput();
 			
+			//Following Task
 			try {
 				index = getArrayIndex(indexStr);
 				needInput = false;
@@ -37,7 +38,6 @@ public class ArraysAndExceptions {
 			catch (IndexTooHighException e) {
 				System.out.println(e.getMessage());
 			}
-
 		}
 
 		System.out.println("The element at index " + index + " is: " + myArray[index]);
@@ -68,15 +68,22 @@ public class ArraysAndExceptions {
 	public int getArrayIndex(String indexStr) throws InvalidIndexException, IndexTooLowException, IndexTooHighException{
 
 		try {
+			
 			int index = Integer.parseInt(indexStr);
 			// TODO: check index value and return proper exception
+			
+			//First, Range of array is 5 from 0 to 4 from generateArray() method
+			//Condition 1 : index lower than range
 			if (index < 0) {
 				throw new IndexTooLowException();
 			}
-			else if (index >= 5) {
+			
+			//Condition 2 : Index higher than range
+			if (index >= 5) {
 				throw new IndexTooHighException();
 			}
 			
+			//Pass all Exception
 			return index;
 
 		} catch (NumberFormatException e) {
